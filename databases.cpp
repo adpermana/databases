@@ -10,7 +10,7 @@ bool Databases::createConnection()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QFile dbFile(QDir::toNativeSeparators(QDir::homePath()+"/Documents/workspace/hello-sql/test.sqlt"));
-    qDebug() << QSqlDatabase::drivers();
+    // qDebug() << QSqlDatabase::drivers();
     db.setHostName("localhost");
     db.setDatabaseName(dbFile.fileName());
     db.setUserName("root");
@@ -125,7 +125,6 @@ bool Databases::loginDB(QString username, QString password)
             return true;
         }
         return false;
-
     }
 }
 
